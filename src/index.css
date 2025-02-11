@@ -20,6 +20,7 @@ ul {
 }
 button {
   cursor: pointer;
+  color: var(--primary-color);
 }
 .container {
   height: 90vh;

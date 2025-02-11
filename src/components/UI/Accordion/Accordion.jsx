@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import styles from "./Accordion.module.css";
 
-const Accordion = ({ data }) => {
+const Accordion = ({ data, toggleAction }) => {
   const { title, children } = data;
   const [open, setOpen] = useState(false);
 
@@ -23,7 +23,7 @@ const Accordion = ({ data }) => {
       </button>
       <div className={styles.optionContainer}>
         {children.map((item) => (
-          <Link to={item.to} key={item.to}>
+          <Link to={item.to} key={item.to} onClick={toggleAction}>
             {item.title}
           </Link>
         ))}
@@ -33,7 +33,16 @@ const Accordion = ({ data }) => {
 };
 
 Accordion.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    children: PropTypes.arrayOf(
+      PropTypes.shape({
+        to: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+      }),
+    ),
+  }).isRequired,
+  toggleAction: PropTypes.func,
 };
 
 export default Accordion;

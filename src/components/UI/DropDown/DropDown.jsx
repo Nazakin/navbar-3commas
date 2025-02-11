@@ -30,9 +30,6 @@ const DropDown = ({ data }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  useEffect(() => {
-    setActive(false);
-  }, [location]);
 
   return (
     <div className={styles.dropDownContainer} ref={dropDownRef}>
@@ -48,17 +45,18 @@ const DropDown = ({ data }) => {
         />
       </button>
       {children.length && (
-        <ul className={`${styles.dropDownList} ${active ? styles.open : ""}`}>
+        <div className={`${styles.dropDownList} ${active ? styles.open : ""}`}>
           {children.map((child) => (
             <Link
               to={child.to}
               className={styles.optionContainer}
               key={child.to}
+              onClick={handleToggleDropDown}
             >
               {child.title}
             </Link>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

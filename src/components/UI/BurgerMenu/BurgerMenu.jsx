@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import Button from "../Button/Button";
@@ -8,16 +8,11 @@ import Accordion from "../Accordion/Accordion";
 import styles from "./BurgerMenu.module.css";
 
 const BurgerMenu = ({ navList }) => {
-  const location = useLocation();
   const [burger, setBurger] = useState(false);
 
   const toggleBurgerMenu = () => {
     setBurger((prev) => !prev);
   };
-
-  useEffect(() => {
-    toggleBurgerMenu();
-  }, [location]);
 
   return (
     <>
@@ -31,9 +26,13 @@ const BurgerMenu = ({ navList }) => {
         <nav className={styles.burgerMenuContainer}>
           {navList.map((item) =>
             item.children ? (
-              <Accordion data={item} key={item.to} />
+              <Accordion
+                data={item}
+                key={item.to}
+                toggleAction={toggleBurgerMenu}
+              />
             ) : (
-              <Link to={item.to} key={item.to}>
+              <Link to={item.to} key={item.to} onClick={toggleBurgerMenu}>
                 {item.title}
               </Link>
             ),
