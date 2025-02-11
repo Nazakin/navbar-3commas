@@ -42,7 +42,7 @@ const Header = () => {
             ),
           )}
         </nav>
-        <img src="Logo.svg" alt="Logo" className={styles.logo} />
+        <img src="/assets/Logo.svg" alt="Logo" className={styles.logo} />
         <div className={styles.authButtonsContainer}>
           <Button mode="primary">Register</Button>
           <Button mode="secondary">Sign in</Button>

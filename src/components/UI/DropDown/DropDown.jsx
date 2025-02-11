@@ -39,7 +39,7 @@ const DropDown = ({ data }) => {
       >
         {title}
         <img
-          src="arrow.svg"
+          src="/assets/arrow.svg"
           className={`${styles.arrow} ${active ? styles.active : ""}`}
           alt="Arrow"
         />

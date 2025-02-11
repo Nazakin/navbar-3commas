@@ -16,7 +16,7 @@ const Accordion = ({ data, toggleAction }) => {
       <button className={styles.accordionButton} onClick={handleOpenAccordion}>
         {title}
         <img
-          src="arrow.svg"
+          src="/assets/arrow.svg"
           alt="arrow"
           className={`${styles.arrowIcon} ${open ? styles.open : ""}`}
         />
