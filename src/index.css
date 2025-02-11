@@ -1,0 +1,26 @@
+:root {
+  --primary-color: #1e1e1e;
+  --secondary-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary-color);
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  height: 90vh;
+}

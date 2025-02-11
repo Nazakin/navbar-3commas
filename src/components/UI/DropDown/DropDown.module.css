@@ -1,0 +1,98 @@
+.dropDownContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.dropDownButton {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  gap: 5px;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0%;
+  position: relative;
+}
+.currentLink {
+  position: relative;
+  text-decoration: none;
+}
+
+.currentLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 1px;
+  background-color: black;
+  box-shadow: none;
+  animation: underlineAnimation 0.5s forwards;
+}
+@keyframes underlineAnimation {
+  0% {
+    left: 50%;
+    width: 0;
+    box-shadow: none;
+  }
+  70% {
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+.arrow {
+  transition: transform 0.5s;
+  transform: rotate(180deg);
+}
+
+.arrow.active {
+  transform: rotate(0deg);
+}
+
+.dropDownList {
+  box-sizing: content-box;
+  width: 122px;
+  position: absolute;
+  top: 47px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 11px 0;
+  gap: 4px;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  pointer-events: none;
+}
+
+.dropDownList.open {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+.optionContainer {
+  display: flex;
+  padding: 8px 31.5px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  align-items: center;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.optionContainer:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

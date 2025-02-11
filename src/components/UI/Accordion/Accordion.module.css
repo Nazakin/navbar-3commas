@@ -1,0 +1,36 @@
+.accordionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 21px;
+  transition: height 0.5s ease-in-out;
+  overflow: hidden;
+}
+.accordionContainer.open {
+  height: 129px;
+}
+
+.accordionButton {
+  display: flex;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0%;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+.arrowIcon {
+  transition: transform 0.5s;
+  transform: rotate(180deg);
+}
+
+.arrowIcon.open {
+  transform: rotate(0deg);
+}
+.optionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

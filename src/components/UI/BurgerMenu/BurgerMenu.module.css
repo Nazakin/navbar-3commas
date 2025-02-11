@@ -1,0 +1,92 @@
+.toggleBurgerButton {
+  display: none;
+}
+.burgerMenuContainer a {
+  display: none;
+}
+.burgerMenuWrapper,
+.authButtonsContainer {
+  display: none;
+}
+@media screen and (max-width: 986px) {
+  .toggleBurgerButton {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 3px;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  .toggleBurgerButton::before,
+  .toggleBurgerButton::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition:
+      transform 0.5s ease,
+      background-color 1s ease;
+  }
+  .toggleBurgerButton::before {
+    bottom: 5px;
+  }
+  .toggleBurgerButton::after {
+    top: 9px;
+  }
+  .toggleBurgerButton.active {
+    background-color: transparent;
+    transition: 0.1s;
+  }
+  .toggleBurgerButton.active::before {
+    background-color: #005bc5;
+    transform: translate(-50%, -50%) rotate(45deg);
+    top: 4px;
+  }
+  .toggleBurgerButton.active::after {
+    background-color: #005bc5;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 4px;
+  }
+  .burgerMenuWrapper {
+    overflow-y: hidden;
+    display: flex;
+    position: fixed;
+    top: 74px;
+    right: -100%;
+    width: 100%;
+    height: calc(90vh - 74px);
+    background-color: var(--secondary-color);
+    transition: right 0.5s ease-in-out;
+    z-index: 5;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .burgerMenuWrapper.open {
+    right: 0;
+  }
+  .burgerMenuContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .burgerMenuContainer a {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  .authButtonsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+}
