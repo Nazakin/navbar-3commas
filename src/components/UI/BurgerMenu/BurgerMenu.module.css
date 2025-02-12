@@ -39,16 +39,16 @@
   .toggleBurgerButton::after {
     top: 9px;
   }
-  .toggleBurgerButton.active {
+  .toggleBurgerButton.burger {
     background-color: transparent;
     transition: 0.1s;
   }
-  .toggleBurgerButton.active::before {
+  .toggleBurgerButton.burger::before {
     background-color: #005bc5;
     transform: translate(-50%, -50%) rotate(45deg);
     top: 4px;
   }
-  .toggleBurgerButton.active::after {
+  .toggleBurgerButton.burger::after {
     background-color: #005bc5;
     transform: translate(-50%, -50%) rotate(-45deg);
     top: 4px;
