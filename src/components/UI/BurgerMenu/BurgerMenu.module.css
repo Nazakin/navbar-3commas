@@ -1,3 +1,6 @@
+.toggleBurgerButtonContainer {
+  display: none;
+}
 .toggleBurgerButton {
   display: none;
 }
@@ -9,6 +12,13 @@
   display: none;
 }
 @media screen and (max-width: 986px) {
+  .toggleBurgerButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 30px;
+  }
   .toggleBurgerButton {
     display: block;
     width: 30px;

@@ -16,10 +16,15 @@ const BurgerMenu = ({ navList }) => {
 
   return (
     <>
-      <button
-        className={`${styles.toggleBurgerButton} ${burger ? styles.burger : ""}`}
+      <div
+        className={styles.toggleBurgerButtonContainer}
         onClick={toggleBurgerMenu}
-      ></button>
+      >
+        <button
+          className={`${styles.toggleBurgerButton} ${burger ? styles.burger : ""}`}
+          onClick={toggleBurgerMenu}
+        ></button>
+      </div>
       <div
         className={`${styles.burgerMenuWrapper} ${burger ? styles.open : ""}`}
       >
