@@ -1,4 +1,4 @@
-.toggleBurgerButtonContainer{
+.toggleBurgerButtonContainer {
   display: none;
 }
 .toggleBurgerButton {
@@ -12,7 +12,7 @@
   display: none;
 }
 @media screen and (max-width: 986px) {
-  .toggleBurgerButtonContainer{
+  .toggleBurgerButtonContainer {
     display: flex;
     align-items: center;
     justify-content: center;
